@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* 1. UPDATED BACKGROUND: Soft Gray-Blue base */
+    --background: 220 14% 97%; 
+    --foreground: 222 47% 11%;
+
+    /* FIX: Card color is now a subtle off-white (not pure white) */
+    --card: 220 14% 98.5%; 
+    --card-foreground: 222 47% 11%;
+
+    /* FIX: Popover color is now a subtle off-white (not pure white) */
+    --popover: 220 14% 98.5%;
+    --popover-foreground: 222 47% 11%;
+
+    /* 2. UPDATED PRIMARY: Cyan-Blue */
+    --primary: 180 80% 40%; 
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 100% 50%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 36 100% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    /* UPDATED RING: Cyan-Blue */
+    --ring: 180 80% 40%;
+
+    --radius: 0.75rem;
+
+    /* UPDATED GRADIENTS: Cyan-Blue */
+    --hero-gradient-from: 180 80% 45%; 
+    --hero-gradient-to: 180 80% 30%;
+    --card-gradient-start: 220 14% 99%; /* For subtle card depth */
+    --splash-orange: 36 100% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 47% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 47% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    /* UPDATED DARK PRIMARY: Brighter Cyan-Blue */
+    --primary: 180 80% 50%; 
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 36 100% 55%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 36 100% 55%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    /* UPDATED DARK RING: Brighter Cyan-Blue */
+    --ring: 180 80% 50%;
+
+    --hero-gradient-from: 263 90% 51%;
+    --hero-gradient-to: 263 70% 40%;
+    --splash-orange: 36 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    /* Existing Tailwind classes for color */
+    @apply bg-background text-foreground;
+
+    /* Faint dotted pattern for visual interest */
+    background-image: radial-gradient(hsl(var(--muted)) 0.5px, transparent 0.5px);
+    background-size: 10px 10px; 
+    background-color: hsl(var(--background)); 
+  }
+}
+
+/* Custom utility for applying a gradient to text, e.g., for the main title */
+.text-primary-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--hero-gradient-to)));
+}
+
+/* Utility for subtle gradient on cards/sections */
+.bg-card-subtle-gradient {
+    background-image: linear-gradient(
+        to bottom, 
+        hsl(var(--card-gradient-start)), 
+        hsl(var(--card))
+    );
+}
