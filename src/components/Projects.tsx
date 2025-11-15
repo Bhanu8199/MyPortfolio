@@ -5,25 +5,40 @@ import { Code2 } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "Golden Restaurant",
-      description: "A restaurant website built with modern web technologies featuring menu display, online ordering, and responsive design.",
-      tags: ["Html", "Css", "Javascript"]
+      "title": "Golden Restaurant",
+      "description": "This restaurant website utilizes modern web technologies to offer a seamless experience, featuring clear menu displays, robust online ordering capabilities, and a fully responsive design.",
+      "tags": ["Html", "Css", "Javascript"],
+      "link_url": "https://goldenrest.vercel.app/", // Corrected URL format
+      "link_text": "Visit Website"
+    },
+    {
+      title: "Brain Tumor Detection Using CNN",
+      description: "NeuroVision AI is a Streamlit platform using deep learning for automated MRI analysis to detect, classify, and localize brain tumors, offering explainable visualizations and educational reports.",
+      tags: ["Python", "TensorFlow", "Keras", "CNN", "Streamlit", "OpenCV", "Python Imaging Library", "Matplotlib", "plotly",  "YoloV8", "ResNet50"],
+      link_url: "https://github.com/Bhanu8199/BRAIN_TUMOR_DIAGNOSIS_BY_TUMOR_TRACKER_TEAM",
+      link_text: "Visit GitHub Repo"
     },
     {
       title: "GUI of Generating Billing & Invoices",
       description: "Desktop application for automated billing and invoice generation with database integration for managing customer records.",
-      tags: ["Python", "SQL"]
+      tags: ["Python", "SQL"],
+      link_url: "https://github.com/Bhanu8199/MAIN-FLOW-SERVICES-INTERNSHIP-/blob/main/TASK6.py",
+      link_text: "Visit GitHub Repo"
     },
     {
       title: "StoreRate",
       description: "A web application that allows users to rate and review local stores, built with a focus on user experience and community engagement.",
-      tags: ["Html", "Css", "React", "Typescript"]
+      tags: ["Html", "Css", "React", "Typescript"],
+      link_url: "https://github.com/Bhanu8199/StoreRate",
+      link_text: "Visit GitHub Repo"
     },
     {
-      title: "CAR Price Prediction Dataset",
+      title: "Car Price Prediction",
       description: "Machine learning project for predicting car prices using various features and algorithms with comprehensive data analysis.",
-      tags: ["Python", "Numpy", "Pandas", "Matplotlib", "Seaborn", "ML Models"]
-    }
+      tags: ["Python", "Numpy", "Pandas", "Matplotlib", "Seaborn", "ML Models"],
+      link_url: "https://github.com/Bhanu8199/CAR-PRICE-PREDICTION-PROJECT",
+      link_text: "Visit GitHub Repo"
+    },
   ];
 
   return (
@@ -59,13 +74,26 @@ const Projects = () => {
                 </p>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
                     <Badge key={tagIndex} variant="secondary" className="font-medium">
                       {tag}
                     </Badge>
                   ))}
                 </div>
+                {project.link_url && (
+                  <a
+                    href={project.link_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+                  >
+                    {project.link_text || "View Project"}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                )}
               </CardContent>
             </Card>
           ))}
