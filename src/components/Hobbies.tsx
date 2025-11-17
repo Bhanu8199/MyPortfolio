@@ -7,25 +7,25 @@ const Hobbies = () => {
     {
       icon: Film,
       title: "Movie",
-      favorite: "Favourite Movies -  OG, Thammudu, Maharshi",
+      favorite: "Watching Movies like OG, Thammudu, Maharshi",
       color: "text-red-500"
     },
     {
       icon: Music,
       title: "Music",
-      favorite: "Favourite Singers - Sid Sriram, Thaman, DSP",
+      favorite: "Listening songs of Sid Sriram, Thaman, DSP",
       color: "text-purple-500"
     },
     {
       icon: Gamepad2,
       title: "Games",
-      favorite: "Favourite Games - Cricket, Badminton",
+      favorite: "Playing Games like Cricket, Badminton",
       color: "text-green-500"
     },
     {
       icon: Plane,
       title: "Traveling",
-      favorite: "Favourite Places - Tirupati, Annavaram",
+      favorite: "Exploring Places like Tirupati, Annavaram and new places",
       color: "text-blue-500"
     }
   ];
