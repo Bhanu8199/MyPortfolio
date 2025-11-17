@@ -2,16 +2,16 @@ import { Progress } from "@/components/ui/progress";
 
 const Skills = () => {
   const skills = [
-    { name: "MS Office", level: 95 },
-    { name: "MySql", level: 85 },
+    { name: "Python", level: 75 },
+    { name: "Html/Css", level: 75 },
     { name: "Javascript", level: 70 },
     { name: "ReactJS", level: 70 },
+    { name: "MySql", level: 85 },
+    { name: "Mongodb", level: 75 },
+    { name: "Postgre Sql", level: 60 },
+    { name: "MS Office", level: 95 },
     { name: "Excel", level: 90 },
     { name: "Canva", level: 50 },
-    { name: "Mongodb", level: 75 },
-    { name: "Html/Css", level: 75 },
-    { name: "Python", level: 75 },
-    { name: "Postgre Sql", level: 60 },
   ];
 
   return (
