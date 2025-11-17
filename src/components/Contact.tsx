@@ -86,9 +86,9 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:items-stretch">
           {/* Contact Info */}
-          <div className="space-y-6">
+          <div className="space-y-6 md:h-full">
             {contactInfo.map((info, index) => (
               <Card key={index} className="border-2 hover:shadow-lg transition-all duration-300 hover:scale-105">
                 <CardContent className="p-6">
@@ -117,49 +117,52 @@ const Contact = () => {
             <Card className="border-2 bg-gradient-to-br from-primary/10 to-secondary/10 hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-6">
                 <p className="font-medium text-foreground mb-3">Follow me:</p>
-                <div className="flex gap-4">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="flex-1 border-2"
-                    onClick={() => window.open('https://www.linkedin.com/in/bhanu-vardhan-medapalli/', '_blank')}
-                  >
-                    <Linkedin className="w-5 h-5 mr-2" />
-                    LinkedIn
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="flex-1 border-2"
-                    onClick={() => window.open('https://leetcode.com/u/Bhanu8199/', '_blank')}
-                  >
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
-                      alt="LeetCode"
-                      className="w-5 h-5 mr-2"
-                    />
-                    LeetCode
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="flex-1 border-2"
-                    onClick={() => window.open('https://github.com/bhanu8199', '_blank')}
-                  >
-                    <Github className="w-5 h-5 mr-2" />
-                    GitHub
-                  </Button>
-
+                <div className="flex flex-col gap-4">
+                  <div className="flex gap-4">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="flex-1 border-2"
+                      onClick={() => window.open('https://www.linkedin.com/in/bhanu-vardhan-medapalli/', '_blank')}
+                    >
+                      <Linkedin className="w-5 h-5 mr-2" />
+                      LinkedIn
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="flex-1 border-2"
+                      onClick={() => window.open('https://leetcode.com/u/Bhanu8199/', '_blank')}
+                    >
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+                        alt="LeetCode"
+                        className="w-5 h-5 mr-2"
+                      />
+                      LeetCode
+                    </Button>
+                  </div>
+                  <div className="flex justify-center">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="border-2"
+                      onClick={() => window.open('https://github.com/bhanu8199', '_blank')}
+                    >
+                      <Github className="w-5 h-5 mr-2" />
+                      GitHub
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
           {/* Contact Form */}
-          <Card className="border-2 hover:shadow-lg transition-shadow duration-300">
-            <CardContent className="p-6">
+          <Card className="border-2 hover:shadow-lg transition-shadow duration-300 md:h-full">
+            <CardContent className="p-6 md:flex md:flex-col md:h-full">
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4 md:flex-grow">
                 <div>
                   <Input
                     placeholder="Your Name"
@@ -194,7 +197,7 @@ const Contact = () => {
                     className="border-2 resize-none"
                   />
                 </div>
-                <div>
+                <div className="md:mt-auto">
                   <Button
                     type="submit"
                     className="w-full bg-primary hover:bg-primary/90 font-semibold"
