@@ -1,31 +1,31 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Film, Music, Gamepad2, Plane } from "lucide-react";
+import { Music, Plane, Gamepad, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hobbies = () => {
   const hobbies = [
     {
-      icon: Film,
-      title: "Movie",
-      favorite: "Watching Movies like OG, Thammudu, Maharshi",
-      color: "text-red-500"
+      icon: Code,
+      title: "Coding",
+      favorite: "Building web applications and exploring new technologies.",
+      color: "text-blue-500"
+    },
+    {
+      icon: Gamepad,
+      title: "Games",
+      favorite: "Playing  Cricket and Badminton during leisure time.",
+      color: "text-purple-500"
     },
     {
       icon: Music,
       title: "Music",
-      favorite: "Listening songs of Sid Sriram, Thaman, DSP",
-      color: "text-purple-500"
-    },
-    {
-      icon: Gamepad2,
-      title: "Games",
-      favorite: "Playing Games like Cricket, Badminton",
+      favorite: "Listening songs from artists like Sid Sriram, Thaman S",
       color: "text-green-500"
     },
     {
       icon: Plane,
       title: "Traveling",
-      favorite: "Exploring Places like Tirupati, Annavaram and new places",
+      favorite: "Exploring new places and cultures.",
       color: "text-blue-500"
     }
   ];
