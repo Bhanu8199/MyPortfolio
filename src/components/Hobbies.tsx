@@ -29,7 +29,6 @@ const Hobbies = () => {
       color: "text-blue-500"
     }
   ];
-
   return (
     <section id="hobbies" className="py-20 bg-muted/30">
       <div className="container px-4">
