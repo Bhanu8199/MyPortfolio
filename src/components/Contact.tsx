@@ -14,16 +14,45 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    phone: ''
   });
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    const phoneRegex = /^[0-9]{10}$/;
+    return phoneRegex.test(phone.replace(/[\s-]/g, ''));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       toast({
         title: "Missing fields",
         description: "Please fill in all required fields before submitting.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!validatePhone(formData.phone)) {
+      toast({
+        title: "Invalid Phone Number",
+        description: "Please enter a valid 10-digit phone number.",
         variant: "destructive"
       });
       return;
@@ -41,7 +70,8 @@ const Contact = () => {
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
+        phone: ''
       });
     } catch (error) {
       toast({
@@ -173,14 +203,15 @@ const Contact = () => {
 
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
-                  Subject
+                  Phone Number
                 </label>
                 <Input
-                  type="text"
-                  placeholder="What is this about?"
-                  value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  type="tel"
+                  placeholder="Enter your 10-digit phone number"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="w-full bg-white/10 border border-green-500/30 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-green-500 transition-colors"
+                  required
                 />
               </div>
 
