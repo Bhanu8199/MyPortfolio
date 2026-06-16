@@ -5,7 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Mail, Linkedin, Github } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import { saveContactMessage, ContactFormData } from "@/lib/contact";
+import type { ContactFormData } from "@/lib/contact";
+
 
 const Contact = () => {
   const { toast } = useToast();
@@ -61,7 +62,17 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      await saveContactMessage(formData);
+      const res = await fetch("http://localhost:3001/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.error ?? "Request failed");
+      }
+
       toast({
         title: "Message sent successfully!",
         description: "Thank you for your message. I'll get back to you soon.",
