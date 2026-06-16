@@ -171,10 +171,9 @@ const Contact = () => {
                   className="w-full bg-gradient-to-r from-yellow-500 via-orange-600 to-red-600 hover:from-yellow-600 hover:via-orange-700 hover:to-red-700 text-white font-bold py-3 rounded-lg border-2 border-orange-400/80 transition-all duration-300 shadow-lg shadow-orange-600/50 hover:shadow-xl hover:shadow-orange-700/70 transform hover:scale-105 text-base"
                   onClick={() => window.open("https://leetcode.com/u/Bhanu8199/", "_blank")}
                 >
-                  <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <text x="2" y="20" fontSize="18" fontWeight="bold">
-                      LC
-                    </text>
+                  <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <path d="M9 9l6 6m0-6l-6 6"/>
                   </svg>
                   LeetCode
                 </Button>
