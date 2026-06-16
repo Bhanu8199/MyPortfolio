@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -76,6 +75,8 @@ const Certificates = () => {
                   <img
                     src={cert.image}
                     alt={cert.title}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -104,7 +105,6 @@ const Certificates = () => {
           >
             Let's Connect
           </Button>
-        </div>
         </div>
       </div>
     </section>

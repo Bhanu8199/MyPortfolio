@@ -1,8 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase } from "lucide-react"; // Changed from GraduationCap to Briefcase
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Briefcase } from "lucide-react";
 
 const Experience = () => {
-  // Sample data for experience
   const experience = [
     {
       role: "Green Skills & Artificial Intelligence Intern",
@@ -39,56 +39,71 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-muted/30">
+    <section id="experience" className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
       <div className="container px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Experience {/* Changed heading to Experience */}
+            <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+              Experience
+            </span>
           </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Professional journey and internship experiences
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-6">
-          {experience.map((exp, index) => (
-            <Card
-              key={index}
-              className="border-l-4 border-l-primary hover:shadow-lg transition-all duration-300 hover:scale-105"
-            >
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Briefcase className="w-6 h-6 text-primary" /> {/* Changed icon to Briefcase */}
+          {experience.map((exp, index) => {
+            const gradients = [
+              { gradient: "from-green-500/20 to-emerald-500/20", border: "border-green-500/30", badge: "from-green-400 to-emerald-400" },
+              { gradient: "from-orange-500/20 to-amber-500/20", border: "border-orange-500/30", badge: "from-orange-400 to-amber-400" },
+              { gradient: "from-blue-500/20 to-cyan-500/20", border: "border-blue-500/30", badge: "from-blue-400 to-cyan-400" },
+              { gradient: "from-violet-500/20 to-purple-500/20", border: "border-violet-500/30", badge: "from-violet-400 to-purple-400" },
+            ];
+            const color = gradients[index % gradients.length];
+
+            return (
+              <div
+                key={index}
+                className={`bg-gradient-to-br ${color.gradient} ${color.border} border-2 rounded-2xl p-6 md:p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2`}
+              >
+                <div className="flex items-start gap-4 md:gap-6">
+                  <div className={`p-3 md:p-4 bg-gradient-to-br ${color.badge} rounded-xl flex-shrink-0`}>
+                    <Briefcase className="w-6 h-6 md:w-7 md:h-7 text-white" />
                   </div>
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                      <h3 className="text-xl font-display font-semibold text-foreground">
-                        {exp.role} {/* Displays the Job Role */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-4 mb-3">
+                      <h3 className="text-xl md:text-2xl font-display font-bold text-foreground">
+                        {exp.role}
                       </h3>
-                      <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full w-fit">
-                        {exp.period} {/* Displays the Time Period */}
-                      </span>
+                      <Badge className={`bg-gradient-to-r ${color.badge} text-white border-0 whitespace-nowrap`}>
+                        {exp.period}
+                      </Badge>
                     </div>
-                    {/* Displays the Company/Institution Name */}
-                    <p className="text-muted-foreground mb-2">{exp.company}</p>
-                    {/* Added an optional description for more detail */}
-                    <p className="text-sm text-foreground/70">{exp.description}</p>
+                    <p className="text-sm md:text-base font-semibold text-muted-foreground mb-2">{exp.company}</p>
+                    <p className="text-sm text-foreground/80 mb-4 leading-relaxed">{exp.description}</p>
                     {exp.link_url && (
-                      <a
-                        href={exp.link_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
+                      <Button
+                        asChild
+                        className={`bg-gradient-to-r ${color.badge} hover:shadow-lg text-white font-semibold border border-opacity-50 transition-all duration-300`}
                       >
-                        {exp.link_text}
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </a>
+                        <a
+                          href={exp.link_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {exp.link_text}
+                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      </Button>
                     )}
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Phone, Mail, Linkedin, Github } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { MapPin, Mail, Linkedin, Github } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import { saveContactMessage, ContactFormData } from "@/lib/contact";
@@ -71,138 +71,141 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
+    <section id="contact" className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
       <div className="container px-4">
-        <div className="text-center mb-4">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Contact
+            <span className="bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
+              Get In Touch
+            </span>
           </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            I'd love to hear from you. Send me a message or connect on social media.
+          </p>
         </div>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:items-stretch">
           {/* Contact Info */}
           <div className="space-y-6 md:h-full">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="border-2 hover:shadow-lg transition-all duration-300 hover:scale-105">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className={`p-3 rounded-lg bg-muted ${info.color}`}>
-                      <info.icon className="w-6 h-6" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-muted-foreground mb-1">{info.label}</p>
-                      {info.href ? (
-                        <a
-                          href={info.href}
-                          className="text-lg font-semibold text-foreground hover:text-primary transition-colors"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p className="text-lg font-semibold text-foreground">{info.value}</p>
-                      )}
-                    </div>
+              <div key={index} className={`bg-gradient-to-br ${index === 0 ? 'from-blue-500/20 to-cyan-500/20 border-blue-500/30' : 'from-red-500/20 to-pink-500/20 border-red-500/30'} border-2 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2`}>
+                <div className="flex items-start gap-4">
+                  <div className={`p-3 bg-gradient-to-br ${index === 0 ? 'from-blue-400 to-cyan-400' : 'from-red-400 to-pink-400'} rounded-lg`}>
+                    <info.icon className="w-6 h-6 text-white" />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-
-            <Card className="border-2 bg-gradient-to-br from-primary/10 to-secondary/10 hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <p className="font-medium text-foreground mb-3">Follow me:</p>
-                <div className="flex flex-col gap-4">
-                  <div className="flex gap-4">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="flex-1 border-2"
-                      onClick={() => window.open('https://www.linkedin.com/in/bhanu-vardhan-medapalli/', '_blank')}
-                    >
-                      <Linkedin className="w-5 h-5 mr-2" />
-                      LinkedIn
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="flex-1 border-2"
-                      onClick={() => window.open('https://leetcode.com/u/Bhanu8199/', '_blank')}
-                    >
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
-                        alt="LeetCode"
-                        className="w-5 h-5 mr-2"
-                      />
-                      LeetCode
-                    </Button>
-                  </div>
-                  <div className="flex justify-center">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-2"
-                      onClick={() => window.open('https://github.com/bhanu8199', '_blank')}
-                    >
-                      <Github className="w-5 h-5 mr-2" />
-                      GitHub
-                    </Button>
+                  <div className="flex-1">
+                    <p className="text-sm text-muted-foreground font-semibold mb-1">{info.label}</p>
+                    {info.href ? (
+                      <a
+                        href={info.href}
+                        className="text-lg font-semibold text-foreground hover:text-blue-400 transition-colors"
+                      >
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="text-lg font-semibold text-foreground">{info.value}</p>
+                    )}
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            ))}
+
+            <div className="bg-gradient-to-br from-violet-500/20 to-purple-500/20 border-2 border-violet-500/30 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500">
+              <p className="font-bold text-foreground mb-4 text-lg">Follow My Journey</p>
+              <div className="flex flex-col gap-3">
+                <Button
+                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 rounded-lg border border-blue-500/50 transition-all duration-300"
+                  onClick={() => window.open('https://www.linkedin.com/in/bhanu-vardhan-medapalli/', '_blank')}
+                >
+                  <Linkedin className="w-5 h-5 mr-2" />
+                  LinkedIn
+                </Button>
+                <Button
+                  className="w-full bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white font-semibold py-3 rounded-lg border border-gray-600/50 transition-all duration-300"
+                  onClick={() => window.open('https://github.com/bhanu8199', '_blank')}
+                >
+                  <Github className="w-5 h-5 mr-2" />
+                  GitHub
+                </Button>
+                <Button
+                  className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-semibold py-3 rounded-lg border border-orange-500/50 transition-all duration-300"
+                  onClick={() => window.open('https://leetcode.com/u/Bhanu8199/', '_blank')}
+                >
+                  <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                    <text x="2" y="20" fontSize="18" fontWeight="bold">LC</text>
+                  </svg>
+                  LeetCode
+                </Button>
+              </div>
+            </div>
           </div>
 
           {/* Contact Form */}
-          <Card className="border-2 hover:shadow-lg transition-shadow duration-300 md:h-full">
-            <CardContent className="p-6 md:flex md:flex-col md:h-full">
+          <form onSubmit={handleSubmit} className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 border-2 border-green-500/30 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500">
+            <div className="space-y-5">
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Your Name
+                </label>
+                <Input
+                  type="text"
+                  placeholder="Enter your full name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full bg-white/10 border border-green-500/30 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-green-500 transition-colors"
+                  required
+                />
+              </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4 md:flex-grow">
-                <div>
-                  <Input
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="border-2"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="border-2"
-                  />
-                </div>
-                <div>
-                  <Input
-                    placeholder="Subject"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="border-2"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    placeholder="Message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={5}
-                    className="border-2 resize-none"
-                  />
-                </div>
-                <div className="md:mt-auto">
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 font-semibold"
-                    size="lg"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Your Email
+                </label>
+                <Input
+                  type="email"
+                  placeholder="your.email@example.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full bg-white/10 border border-green-500/30 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-green-500 transition-colors"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Subject
+                </label>
+                <Input
+                  type="text"
+                  placeholder="What is this about?"
+                  value={formData.subject}
+                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                  className="w-full bg-white/10 border border-green-500/30 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-green-500 transition-colors"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Message
+                </label>
+                <Textarea
+                  placeholder="Your message here..."
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full bg-white/10 border border-green-500/30 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-green-500 transition-colors resize-none h-32"
+                  required
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 disabled:opacity-50 text-white font-semibold py-3 rounded-lg border border-green-500/50 transition-all duration-300"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
+              </Button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
