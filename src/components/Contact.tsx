@@ -58,15 +58,8 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "My Address",
-      value: "Somavarappadu, Eluru, Andhra Pradesh - 534450",
+      value: "Eluru, Andhra Pradesh - 534450",
       color: "text-blue-500"
-    },
-    {
-      icon: Phone,
-      label: "Call me:",
-      value: "+91 9347978199",
-      href: "tel:+919347978199",
-      color: "text-green-500"
     },
     {
       icon: Mail,

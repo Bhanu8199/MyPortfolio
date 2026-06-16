@@ -42,41 +42,50 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-background">
+    <section id="projects" className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
       <div className="container px-4">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Projects
+            <span className="bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my recent work and technical projects
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            A showcase of my recent work and technical expertise
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:scale-105"
-            >
-              <div className="h-2 bg-gradient-to-r from-primary to-secondary" />
-              <CardHeader>
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <Code2 className="w-5 h-5 text-primary" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {projects.map((project, index) => {
+            const colors = [
+              { gradient: "from-blue-500/20 to-cyan-500/20", border: "border-blue-500/30", badge: "from-blue-400 to-cyan-400" },
+              { gradient: "from-violet-500/20 to-purple-500/20", border: "border-violet-500/30", badge: "from-violet-400 to-purple-400" },
+              { gradient: "from-green-500/20 to-emerald-500/20", border: "border-green-500/30", badge: "from-green-400 to-emerald-400" },
+              { gradient: "from-orange-500/20 to-amber-500/20", border: "border-orange-500/30", badge: "from-orange-400 to-amber-400" },
+              { gradient: "from-pink-500/20 to-rose-500/20", border: "border-pink-500/30", badge: "from-pink-400 to-rose-400" },
+            ];
+            const color = colors[index % colors.length];
+
+            return (
+              <div
+                key={index}
+                className={`bg-gradient-to-br ${color.gradient} ${color.border} border-2 rounded-2xl p-6 hover:shadow-2xl hover:${color.border.replace('border-', 'border-')}/50 transition-all duration-500 transform hover:-translate-y-2`}
+              >
+                <div className={`h-2 bg-gradient-to-r ${color.badge} rounded-full mb-4`} />
+                <div className="flex items-start gap-3 mb-4">
+                  <div className={`p-3 bg-gradient-to-br ${color.badge} rounded-lg`}>
+                    <Code2 className="w-6 h-6 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-display group-hover:text-primary transition-colors flex-1">
+                  <h3 className="text-xl md:text-2xl font-display font-bold text-foreground">
                     {project.title}
-                  </CardTitle>
+                  </h3>
                 </div>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground mb-4 leading-relaxed text-sm md:text-base">
                   {project.description}
                 </p>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="secondary" className="font-medium">
+                    <Badge key={tagIndex} className={`bg-gradient-to-r ${color.badge} text-white border-0 font-medium`}>
                       {tag}
                     </Badge>
                   ))}
@@ -86,7 +95,7 @@ const Projects = () => {
                     href={project.link_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+                    className="inline-flex items-center gap-2 text-white hover:scale-105 transition-transform font-semibold bg-gradient-to-r from-white/20 to-white/10 hover:from-white/30 hover:to-white/20 px-4 py-2 rounded-lg border border-white/30 text-sm"
                   >
                     {project.link_text || "View Project"}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,9 +103,10 @@ const Projects = () => {
                     </svg>
                   </a>
                 )}
-              </CardContent>
-            </Card>
-          ))}
+              </div>
+            );
+          })}
+        </div>
         </div>
       </div>
     </section>

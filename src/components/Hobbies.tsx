@@ -8,67 +8,80 @@ const Hobbies = () => {
       icon: Code,
       title: "Coding",
       favorite: "Building web applications and exploring new technologies",
-      color: "text-blue-500"
+      gradient: "from-blue-500/20 to-cyan-500/20",
+      borderColor: "border-blue-500/30",
+      badgeGradient: "from-blue-400 to-cyan-400"
     },
     {
       icon: Gamepad,
       title: "Games",
-      favorite: "Playing  Cricket and Badminton",
-      color: "text-purple-500"
+      favorite: "Playing Cricket and Badminton",
+      gradient: "from-green-500/20 to-emerald-500/20",
+      borderColor: "border-green-500/30",
+      badgeGradient: "from-green-400 to-emerald-400"
     },
     {
       icon: Music,
       title: "Music",
       favorite: "Listening songs from artists like Sid Sriram, Thaman S",
-      color: "text-green-500"
+      gradient: "from-violet-500/20 to-purple-500/20",
+      borderColor: "border-violet-500/30",
+      badgeGradient: "from-violet-400 to-purple-400"
     },
     {
       icon: Plane,
       title: "Traveling",
       favorite: "Exploring new places and cultures",
-      color: "text-blue-500"
+      gradient: "from-orange-500/20 to-amber-500/20",
+      borderColor: "border-orange-500/30",
+      badgeGradient: "from-orange-400 to-amber-400"
     }
   ];
+
   return (
-    <section id="hobbies" className="py-20 bg-muted/30">
+    <section id="hobbies" className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
       <div className="container px-4">
-        <div className="text-center mb-4">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            My Hobbies
+            <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
+              My Hobbies
+            </span>
           </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Things that keep me motivated and passionate
+          </p>
         </div>
 
-        <div className="text-center mb-12">
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
-            onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Hire Me
-          </Button>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {hobbies.map((hobby, index) => (
-            <Card
-              key={index}
-              className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:scale-105"
-            >
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className={`p-3 rounded-lg bg-muted ${hobby.color}`}>
-                    <hobby.icon className="w-6 h-6" />
-                  </div>
-                  <CardTitle className="text-2xl font-display">
-                    {hobby.title}
-                  </CardTitle>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
+          {hobbies.map((hobby, index) => {
+            const Icon = hobby.icon;
+            return (
+              <div
+                key={index}
+                className={`bg-gradient-to-br ${hobby.gradient} ${hobby.borderColor} border-2 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2`}
+              >
+                <div className={`p-4 bg-gradient-to-br ${hobby.badgeGradient} rounded-xl mb-4 w-fit`}>
+                  <Icon className="w-8 h-8 text-white" />
                 </div>
-                <p className="text-sm font-medium text-primary">
+                <h3 className="text-2xl font-display font-bold text-foreground mb-3">
+                  {hobby.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   {hobby.favorite}
                 </p>
-              </CardHeader>
-            </Card>
-          ))}
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="text-center">
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600 text-white font-semibold px-8 py-6 text-lg rounded-xl border border-violet-500/50 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+            onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Let's Work Together
+          </Button>
         </div>
       </div>
     </section>
