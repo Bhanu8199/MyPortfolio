@@ -5,6 +5,22 @@ const Experience = () => {
   // Sample data for experience
   const experience = [
     {
+      role: "Green Skills & Artificial Intelligence Intern",
+      period: "Jul 2025 - Dec 2025",
+      company: "Shell India & Edunet Foundation ( Onsite On My College Campus )",
+      description: "Completed the Advanced Internship in Green Skills and Artificial Intelligence under the Skills4Future Program, gaining practical knowledge in AI fundamentals, sustainable technologies, and real-world problem-solving through industry-oriented training.",
+      link_url: "https://www.linkedin.com/posts/bhanu-vardhan-medapalli_green-skills-ai-internship-completion-certificate-activity-7406598206798827522-5caH/",
+      link_text: "Visit LinkedIn To See My Certification"
+    },
+    {
+      role: "SAP Intern",
+      period: "Nov 2024 - Aug 2025",
+      company: "SAP & Edunet Foundation ( Remote )",
+      description: "Completed the SAP Educate to Employ Program, gaining 369+ hours of hands-on experience in SAP ABAP, BTP, software development, Agile practices, and professional skills to prepare for real-world industry challenges.",
+      link_url: "https://www.linkedin.com/posts/bhanu-vardhan-medapalli_sap-internship-completion-certificate-activity-7367817240009682944-hnKR/",
+      link_text: "Visit LinkedIn To See My Certification"
+    },
+    {
       role: "Front-End Developer Intern",
       period: "Mar 2025 - Apr 2025",
       company: "Varcode Edtech Pvt.Ltd ( Remote )",

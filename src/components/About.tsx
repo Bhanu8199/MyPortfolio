@@ -33,7 +33,7 @@ const About = () => {
               About
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              PU 2026 🎓 | Ex - Intern @Varcode Edtech | Frontend Developer | Python & Data Science Enthusiast | Skilled in C, Python, HTML, CSS , JavaScript, React.js , SQL, MongoDB | Looking for Job
+              PU 2026 🎓 | Ex - Intern @SAP | Frontend Developer | Python & Data Science Enthusiast | Skilled in Generative AI & ML, Python, HTML, CSS , JavaScript, React.js , SQL, MongoDB | Looking for Job
             </p>
 
             <div className="space-y-4 mb-8">
@@ -54,7 +54,7 @@ const About = () => {
                   <p className="text-sm text-muted-foreground">No of Participation</p>
                   <p className="text-4xl font-bold text-foreground">10</p>
                   <p className="text-sm text-muted-foreground mt-1">
-                    I am actively participating in many college workshops and competitions focused on covering areas like JavaScript, HTML/CSS, Machine Learning (ML), FunFest, and other events.
+                    I am actively participating in many college workshops and competitions focused on covering areas like Generative AI, Python, JavaScript, HTML/CSS, Machine Learning (ML), FunFest, and other events.
                   </p>
                 </div>
               </CardContent>

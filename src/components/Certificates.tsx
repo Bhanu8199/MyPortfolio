@@ -33,7 +33,12 @@ const Certificates = () => {
       title: "SAP Job Readiness Completion Certificate",
       issuer: "SAP",
       image: "/img/SAP JOB READINESS CERTIFICATE.jpg"
-    }
+    },
+    {
+      title: "SAP Internship Completion Certificate",
+      issuer: "SAP & Edunet Foundation",
+      image: "/img/SAP INTERNSHIP COMPLETION CERTIFICATE.jpg"
+    },
   ];
 
   return (
