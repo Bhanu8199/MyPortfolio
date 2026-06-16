@@ -40,32 +40,38 @@ const Hero = () => {
           <div className="flex flex-wrap gap-4">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold px-8 py-6 text-lg rounded-xl border border-blue-500/50 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
-              onClick={() => window.open('/BHANUVARDHAN_RESUME.pdf', '_blank')}
+              className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600 hover:from-pink-600 hover:via-purple-600 hover:to-indigo-700 text-white font-bold px-8 py-6 text-lg rounded-xl border-2 border-purple-400/60 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/BHANUVARDHAN_RESUME.pdf';
+                link.download = 'BHANUVARDHAN_RESUME.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
             >
-              <Download className="w-5 h-5 mr-2" />
+              <Download className="w-6 h-6 mr-2" />
               DOWNLOAD RESUME
             </Button>
             <Button
               size="lg"
-              variant="outline"
-              className="border-2 border-gradient-to-r from-purple-500/50 to-pink-500/50 hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-pink-500/20 font-semibold px-8 py-6 text-lg rounded-xl transition-all duration-300"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold px-8 py-6 text-lg rounded-xl border-2 border-cyan-400/60 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
               onClick={() => window.open('https://www.linkedin.com/in/bhanu-vardhan-medapalli/', '_blank')}
             >
               Let's Connect
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <ArrowRight className="w-6 h-6 ml-2" />
             </Button>
           </div>
 
           {/* Stats */}
           <div className="mt-12 grid grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-lg p-4 hover:border-blue-500/50 transition-all">
-              <p className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">10+</p>
-              <p className="text-sm text-muted-foreground">Projects Completed</p>
+            <div className="bg-gradient-to-br from-pink-500/30 to-rose-500/20 border-2 border-pink-400/60 rounded-xl p-5 hover:border-pink-400/100 transition-all hover:shadow-lg transform hover:-translate-y-1">
+              <p className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">10+</p>
+              <p className="text-sm font-semibold text-muted-foreground mt-1">Projects Completed</p>
             </div>
-            <div className="bg-gradient-to-br from-violet-500/20 to-purple-500/20 border border-violet-500/30 rounded-lg p-4 hover:border-violet-500/50 transition-all">
-              <p className="text-2xl font-bold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">25+</p>
-              <p className="text-sm text-muted-foreground">Skills Mastered</p>
+            <div className="bg-gradient-to-br from-indigo-500/30 to-purple-500/20 border-2 border-indigo-400/60 rounded-xl p-5 hover:border-indigo-400/100 transition-all hover:shadow-lg transform hover:-translate-y-1">
+              <p className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">25+</p>
+              <p className="text-sm font-semibold text-muted-foreground mt-1">Skills Mastered</p>
             </div>
           </div>
         </div>

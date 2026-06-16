@@ -41,11 +41,11 @@ const Certificates = () => {
   ];
 
   return (
-    <section id="certificates" className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
+    <section id="certificates" className="py-20 bg-gradient-to-br from-background via-amber-950/10 to-background">
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            <span className="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500 bg-clip-text text-transparent">
               Certificates & Achievements
             </span>
           </h2>

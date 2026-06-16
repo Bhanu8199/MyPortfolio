@@ -11,11 +11,11 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
+    <section id="about" className="py-20 bg-gradient-to-br from-background via-pink-950/10 to-background">
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-pink-400 via-rose-400 to-red-400 bg-clip-text text-transparent">
               About Me
             </span>
           </h2>

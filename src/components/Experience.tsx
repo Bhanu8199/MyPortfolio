@@ -39,11 +39,11 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
+    <section id="experience" className="py-20 bg-gradient-to-br from-background via-emerald-950/10 to-background">
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-300 via-teal-400 to-green-500 bg-clip-text text-transparent">
               Experience
             </span>
           </h2>

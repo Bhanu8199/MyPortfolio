@@ -88,7 +88,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "My Address",
-      value: "Eluru, Andhra Pradesh - 534450",
+      value: "Eluru, Andhra Pradesh",
       color: "text-blue-500"
     },
     {
@@ -101,11 +101,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
+    <section id="contact" className="py-20 bg-gradient-to-br from-background via-red-950/10 to-background">
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            <span className="bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-400 via-pink-400 to-purple-500 bg-clip-text text-transparent">
               Get In Touch
             </span>
           </h2>

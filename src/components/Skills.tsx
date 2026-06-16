@@ -93,11 +93,13 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-background">
+    <section id="skills" className="py-20 bg-gradient-to-br from-background via-indigo-950/10 to-background">
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            Skills & Expertise
+            <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-indigo-500 bg-clip-text text-transparent">
+              Skills & Expertise
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             A comprehensive overview of my technical skills across frontend, backend, AI/ML, and specialized technologies
