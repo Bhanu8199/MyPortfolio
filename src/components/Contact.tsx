@@ -150,25 +150,25 @@ const Contact = () => {
               </div>
             ))}
 
-            <div className="bg-gradient-to-br from-violet-500/20 to-purple-500/20 border-2 border-violet-500/30 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500">
-              <p className="font-bold text-foreground mb-4 text-lg">Follow My Journey</p>
+            <div className="bg-gradient-to-br from-blue-600/40 to-indigo-600/40 border-2 border-blue-400/80 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500 shadow-lg shadow-blue-500/30">
+              <p className="font-bold text-white mb-4 text-lg">Follow My Journey</p>
               <div className="flex flex-col gap-3">
                 <Button
-                  className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold py-3 rounded-lg border border-blue-500/50 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-600 hover:from-blue-700 hover:via-blue-600 hover:to-cyan-700 text-white font-bold py-3 rounded-lg border-2 border-blue-300/80 transition-all duration-300 shadow-lg shadow-blue-500/50 hover:shadow-xl hover:shadow-blue-600/70 transform hover:scale-105 text-base"
                   onClick={() => window.open("https://www.linkedin.com/in/bhanu-vardhan-medapalli/", "_blank")}
                 >
                   <Linkedin className="w-6 h-6 mr-2" />
                   LinkedIn
                 </Button>
                 <Button
-                  className="w-full bg-gradient-to-r from-gray-700 to-gray-900 hover:from-gray-800 hover:to-black text-white font-semibold py-3 rounded-lg border border-gray-600/50 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-slate-700 via-slate-900 to-black hover:from-slate-800 hover:via-black hover:to-slate-950 text-white font-bold py-3 rounded-lg border-2 border-slate-500/80 transition-all duration-300 shadow-lg shadow-slate-900/50 hover:shadow-xl hover:shadow-slate-900/70 transform hover:scale-105 text-base"
                   onClick={() => window.open("https://github.com/bhanu8199", "_blank")}
                 >
                   <Github className="w-6 h-6 mr-2" />
                   GitHub
                 </Button>
                 <Button
-                  className="w-full bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white font-semibold py-3 rounded-lg border border-orange-500/50 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-yellow-500 via-orange-600 to-red-600 hover:from-yellow-600 hover:via-orange-700 hover:to-red-700 text-white font-bold py-3 rounded-lg border-2 border-orange-400/80 transition-all duration-300 shadow-lg shadow-orange-600/50 hover:shadow-xl hover:shadow-orange-700/70 transform hover:scale-105 text-base"
                   onClick={() => window.open("https://leetcode.com/u/Bhanu8199/", "_blank")}
                 >
                   <svg className="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -185,52 +185,52 @@ const Contact = () => {
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-gradient-to-br from-purple-600/25 via-magenta-500/20 to-pink-600/25 border-2 border-purple-400/80 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 shadow-lg shadow-purple-500/20"
+            className="bg-gradient-to-br from-indigo-700/40 via-purple-600/35 to-blue-600/40 border-2 border-indigo-400/90 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 shadow-lg shadow-indigo-600/40"
           >
             <div className="space-y-5">
               <div>
-                <label className="block text-sm font-bold text-transparent bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text mb-3">Your Name</label>
+                <label className="block text-base font-bold text-white mb-3 drop-shadow-lg">Your Name</label>
                 <Input
                   type="text"
                   placeholder="Enter your full name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-gradient-to-r from-white/20 to-purple-100/20 border-2 border-purple-400/60 rounded-xl px-5 py-3 text-foreground placeholder:text-muted-foreground focus:border-pink-400 focus:shadow-lg focus:shadow-pink-500/30 transition-all duration-300 focus:bg-white/30"
+                  className="w-full bg-white/25 border-2 border-indigo-300/80 rounded-xl px-5 py-3 text-white placeholder:text-gray-300 focus:border-cyan-300 focus:shadow-lg focus:shadow-cyan-400/40 transition-all duration-300 focus:bg-white/35 font-medium"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-transparent bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text mb-3">Your Email</label>
+                <label className="block text-base font-bold text-white mb-3 drop-shadow-lg">Your Email</label>
                 <Input
                   type="email"
                   placeholder="your.email@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-gradient-to-r from-white/20 to-purple-100/20 border-2 border-purple-400/60 rounded-xl px-5 py-3 text-foreground placeholder:text-muted-foreground focus:border-pink-400 focus:shadow-lg focus:shadow-pink-500/30 transition-all duration-300 focus:bg-white/30"
+                  className="w-full bg-white/25 border-2 border-indigo-300/80 rounded-xl px-5 py-3 text-white placeholder:text-gray-300 focus:border-cyan-300 focus:shadow-lg focus:shadow-cyan-400/40 transition-all duration-300 focus:bg-white/35 font-medium"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-transparent bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text mb-3">Phone Number</label>
+                <label className="block text-base font-bold text-white mb-3 drop-shadow-lg">Phone Number</label>
                 <Input
                   type="tel"
                   placeholder="Enter your 10-digit phone number"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-gradient-to-r from-white/20 to-purple-100/20 border-2 border-purple-400/60 rounded-xl px-5 py-3 text-foreground placeholder:text-muted-foreground focus:border-pink-400 focus:shadow-lg focus:shadow-pink-500/30 transition-all duration-300 focus:bg-white/30"
+                  className="w-full bg-white/25 border-2 border-indigo-300/80 rounded-xl px-5 py-3 text-white placeholder:text-gray-300 focus:border-cyan-300 focus:shadow-lg focus:shadow-cyan-400/40 transition-all duration-300 focus:bg-white/35 font-medium"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-transparent bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text mb-3">Message</label>
+                <label className="block text-base font-bold text-white mb-3 drop-shadow-lg">Message</label>
                 <Textarea
                   placeholder="Your message here..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-gradient-to-r from-white/20 to-purple-100/20 border-2 border-purple-400/60 rounded-xl px-5 py-3 text-foreground placeholder:text-muted-foreground focus:border-pink-400 focus:shadow-lg focus:shadow-pink-500/30 transition-all duration-300 focus:bg-white/30 resize-none h-32"
+                  className="w-full bg-white/25 border-2 border-indigo-300/80 rounded-xl px-5 py-3 text-white placeholder:text-gray-300 focus:border-cyan-300 focus:shadow-lg focus:shadow-cyan-400/40 transition-all duration-300 focus:bg-white/35 resize-none h-32 font-medium"
                   required
                 />
               </div>
@@ -238,7 +238,7 @@ const Contact = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 hover:from-pink-600 hover:via-purple-700 hover:to-indigo-700 disabled:opacity-50 text-white font-bold py-4 px-6 rounded-xl border-2 border-pink-400/80 shadow-lg shadow-purple-500/50 hover:shadow-2xl hover:shadow-pink-500/60 transition-all duration-300 transform hover:scale-105 text-lg"
+                className="w-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 hover:from-cyan-600 hover:via-blue-600 hover:to-indigo-700 disabled:opacity-50 text-white font-bold py-4 px-6 rounded-xl border-2 border-cyan-300/80 shadow-lg shadow-blue-600/50 hover:shadow-2xl hover:shadow-blue-700/70 transition-all duration-300 transform hover:scale-105 text-lg"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
