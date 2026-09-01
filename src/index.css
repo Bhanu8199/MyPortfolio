@@ -2,88 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Professional Dark Color System Design Tokens */
 @layer base {
   :root {
-    /* 1. UPDATED BACKGROUND: Soft Gray-Blue base */
-    --background: 220 14% 97%; 
-    --foreground: 222 47% 11%;
+    /* Deep Navy - Dominant Background Color (60%) */
+    --background: 221 71% 7%; /* #0B1120 */
+    --foreground: 210 40% 98%; /* #F8FAFC */
 
-    /* FIX: Card color is now a subtle off-white (not pure white) */
-    --card: 220 14% 98.5%; 
-    --card-foreground: 222 47% 11%;
+    /* Surface - Card/Container Color */
+    --card: 217 33% 9%; /* #111827 */
+    --card-foreground: 210 40% 98%; /* #F8FAFC */
 
-    /* FIX: Popover color is now a subtle off-white (not pure white) */
-    --popover: 220 14% 98.5%;
-    --popover-foreground: 222 47% 11%;
+    /* Popover - Dropdown/Modal */
+    --popover: 217 33% 9%; /* #111827 */
+    --popover-foreground: 210 40% 98%; /* #F8FAFC */
 
-    /* 2. UPDATED PRIMARY: Cyan-Blue */
-    --primary: 180 80% 40%; 
-    --primary-foreground: 0 0% 100%;
+    /* Electric Blue - Primary Accent (10%) */
+    --primary: 217 91% 60%; /* #3B82F6 */
+    --primary-foreground: 210 40% 98%; /* #F8FAFC */
 
-    --secondary: 36 100% 50%;
-    --secondary-foreground: 222 47% 11%;
+    /* Secondary - Subtle Accent (Avoid using - prefer primary for consistency) */
+    --secondary: 217 33% 9%; /* #111827 - Use surface instead */
+    --secondary-foreground: 210 40% 98%; /* #F8FAFC */
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    /* Muted Text - Supporting Information (30%) */
+    --muted: 217 33% 17%; /* #1E293B - Subtle dark */
+    --muted-foreground: 217 33% 71%; /* #94A3B8 - Muted text */
 
-    --accent: 36 100% 50%;
-    --accent-foreground: 222 47% 11%;
+    /* Accent - Avoid using, prefer primary */
+    --accent: 217 91% 60%; /* #3B82F6 - Electric Blue */
+    --accent-foreground: 210 40% 98%; /* #F8FAFC */
 
+    /* Destructive - Error/Delete */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    /* UPDATED RING: Cyan-Blue */
-    --ring: 180 80% 40%;
+    /* Border - Subtle dark navy */
+    --border: 215 28% 17%; /* #1E293B */
+    --input: 217 33% 9%; /* #111827 */
+
+    /* Ring - Focus indicator (Blue) */
+    --ring: 217 91% 60%; /* #3B82F6 - Electric Blue */
 
     --radius: 0.75rem;
-
-    /* UPDATED GRADIENTS: Cyan-Blue */
-    --hero-gradient-from: 180 80% 45%; 
-    --hero-gradient-to: 180 80% 30%;
-    --card-gradient-start: 220 14% 99%; /* For subtle card depth */
-    --splash-orange: 36 100% 50%;
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 98%;
+    /* Already using dark theme as default - these are the same */
+    --background: 221 71% 7%; /* #0B1120 */
+    --foreground: 210 40% 98%; /* #F8FAFC */
 
-    --card: 222 47% 15%;
-    --card-foreground: 0 0% 98%;
+    --card: 217 33% 9%; /* #111827 */
+    --card-foreground: 210 40% 98%; /* #F8FAFC */
 
-    --popover: 222 47% 15%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 217 33% 9%; /* #111827 */
+    --popover-foreground: 210 40% 98%; /* #F8FAFC */
 
-    /* UPDATED DARK PRIMARY: Brighter Cyan-Blue */
-    --primary: 180 80% 50%; 
-    --primary-foreground: 0 0% 100%;
+    --primary: 217 91% 60%; /* #3B82F6 - Electric Blue */
+    --primary-foreground: 210 40% 98%; /* #F8FAFC */
 
-    --secondary: 36 100% 55%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 217 33% 9%; /* #111827 */
+    --secondary-foreground: 210 40% 98%; /* #F8FAFC */
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 217 33% 17%; /* #1E293B */
+    --muted-foreground: 217 33% 71%; /* #94A3B8 */
 
-    --accent: 36 100% 55%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 217 91% 60%; /* #3B82F6 - Electric Blue */
+    --accent-foreground: 210 40% 98%; /* #F8FAFC */
 
     --destructive: 0 63% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    /* UPDATED DARK RING: Brighter Cyan-Blue */
-    --ring: 180 80% 50%;
-
-    --hero-gradient-from: 263 90% 51%;
-    --hero-gradient-to: 263 70% 40%;
-    --splash-orange: 36 100% 55%;
+    --border: 215 28% 17%; /* #1E293B */
+    --input: 217 33% 9%; /* #111827 */
+    --ring: 217 91% 60%; /* #3B82F6 - Electric Blue */
   }
 }
 
@@ -93,29 +85,37 @@ All colors MUST be HSL.
   }
 
   body {
-    /* Existing Tailwind classes for color */
     @apply bg-background text-foreground;
-
-    /* Faint dotted pattern for visual interest */
+    /* Subtle dotted background pattern */
     background-image: radial-gradient(hsl(var(--muted)) 0.5px, transparent 0.5px);
-    background-size: 10px 10px; 
-    background-color: hsl(var(--background)); 
+    background-size: 10px 10px;
+    background-color: hsl(var(--background));
   }
 }
 
-/* Custom utility for applying a gradient to text, e.g., for the main title */
+/* Text gradient utility for headings */
 .text-primary-gradient {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--hero-gradient-to)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary)));
 }
 
-/* Utility for subtle gradient on cards/sections */
-.bg-card-subtle-gradient {
-    background-image: linear-gradient(
-        to bottom, 
-        hsl(var(--card-gradient-start)), 
-        hsl(var(--card))
-    );
+/* Subtle blue-based gradient for sections */
+.bg-gradient-subtle {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--background)) 0%,
+    hsl(var(--card)) 50%,
+    hsl(var(--background)) 100%
+  );
+}
+
+/* Blue accent glow for interactive elements */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.hover:glow-blue:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
 }
