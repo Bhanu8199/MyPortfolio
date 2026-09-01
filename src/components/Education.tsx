@@ -8,34 +8,25 @@ const Education = () => {
       degree: "B.TECH ( CSE - AI )",
       period: "2022 - 2026",
       institution: "Parul University - ( Parul Institute of Engineering & Technology, Vadodara, Gujarat )",
-      gradient: "from-blue-500/20 to-cyan-500/20",
-      borderColor: "border-blue-500/30",
-      badgeGradient: "from-blue-400 to-cyan-400"
     },
     {
       degree: "HSC",
       period: "2020 - 2022",
       institution: "Sri Chaitanya Junior College, Eluru, Andhra Pradesh",
-      gradient: "from-violet-500/20 to-purple-500/20",
-      borderColor: "border-violet-500/30",
-      badgeGradient: "from-violet-400 to-purple-400"
     },
     {
       degree: "SSC",
       period: "2019 - 2020",
       institution: "Vignan Global Gen School, Eluru, Andhra Pradesh",
-      gradient: "from-green-500/20 to-emerald-500/20",
-      borderColor: "border-green-500/30",
-      badgeGradient: "from-green-400 to-emerald-400"
     }
   ];
 
   return (
-    <section id="education" className="py-20 bg-gradient-to-br from-background via-cyan-950/10 to-background">
+    <section id="education" className="py-20 bg-background">
       <div className="container px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            <span className="bg-gradient-to-r from-cyan-300 via-teal-400 to-blue-500 bg-clip-text text-transparent">
+            <span className="text-primary">
               Education
             </span>
           </h2>
@@ -48,11 +39,11 @@ const Education = () => {
           {education.map((edu, index) => (
             <div
               key={index}
-              className={`bg-gradient-to-br ${edu.gradient} ${edu.borderColor} border-2 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2`}
+              className="bg-surface border border-border rounded-lg p-8 hover:border-primary/40 hover:shadow-lg transition-all duration-300"
             >
               <div className="flex items-start gap-6">
-                <div className={`p-4 bg-gradient-to-br ${edu.badgeGradient} rounded-xl flex-shrink-0`}>
-                  <GraduationCap className="w-8 h-8 text-white" />
+                <div className="p-4 bg-primary/20 rounded-lg flex-shrink-0">
+                  <GraduationCap className="w-8 h-8 text-primary" />
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-3">
@@ -60,7 +51,7 @@ const Education = () => {
                       {edu.degree}
                     </h3>
                     <Badge
-                      className={`bg-gradient-to-r ${edu.badgeGradient} text-white border-0 font-semibold px-4 py-1 text-sm`}
+                      className="bg-primary/20 text-primary border-0 font-semibold px-4 py-1 text-sm"
                     >
                       {edu.period}
                     </Badge>
