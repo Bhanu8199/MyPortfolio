@@ -4,24 +4,24 @@ import bhanuImage from "@/img/BHANU.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-16">
+    <section id="home" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-0 pb-12 pt-20 sm:py-20">
       {/* Subtle blue gradient accent - no purple/pink rainbow */}
-      <div className="absolute top-0 left-0 w-96 h-96 opacity-20 blur-3xl">
+      <div className="absolute left-0 top-0 h-64 w-64 opacity-20 blur-3xl sm:h-96 sm:w-96">
         <div className="w-full h-full bg-gradient-to-br from-primary/40 to-primary/20 rounded-full"></div>
       </div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 opacity-15 blur-3xl">
+      <div className="absolute bottom-0 right-0 h-64 w-64 opacity-15 blur-3xl sm:h-96 sm:w-96">
         <div className="w-full h-full bg-gradient-to-br from-primary/30 to-primary/10 rounded-full"></div>
       </div>
 
-      <div className="container px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="container relative z-10 grid grid-cols-1 items-center gap-10 px-4 md:grid-cols-2 lg:gap-12">
         {/* Left side - Text content */}
-        <div className="text-left">
-          <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
+        <div className="min-w-0 text-center md:text-left">
+          <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-2 sm:mb-6 sm:px-4">
             <Sparkles className="w-4 h-4 text-primary" />
-            <p className="text-sm font-semibold text-primary">Welcome to my portfolio</p>
+            <p className="text-xs font-semibold text-primary sm:text-sm">Welcome to my portfolio</p>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-foreground mb-4 leading-tight">
+          <h1 className="mb-4 text-4xl font-display font-bold leading-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
             <span className="text-primary">
               BHANU VARDHAN
             </span>
@@ -29,18 +29,18 @@ const Hero = () => {
             <span className="text-foreground">MEDAPALLI</span>
           </h1>
 
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-muted-foreground">
+          <h2 className="mb-5 text-lg font-semibold text-muted-foreground sm:mb-6 sm:text-xl lg:text-2xl">
             Frontend Developer | Python Data Science Enthusiast
           </h2>
 
-          <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-            Building beautiful, responsive web experiences with cutting-edge technologies. Passionate about AI, ML, and creating solutions that matter.
+          <p className="mx-auto mb-7 max-w-xl text-base leading-relaxed text-muted-foreground sm:mb-8 sm:text-lg md:mx-0">
+            I build responsive web applications and explore practical AI solutions that solve real-world problems.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-6 text-lg rounded-lg transition-all"
+              className="w-full rounded-lg bg-primary px-5 py-5 text-base font-bold text-white transition-all hover:bg-primary/90 sm:w-auto sm:px-8 sm:py-6 sm:text-lg"
               onClick={() => {
                 const link = document.createElement('a');
                 link.href = '/BHANUVARDHAN_RESUME.pdf';
@@ -55,7 +55,7 @@ const Hero = () => {
             </Button>
             <Button
               size="lg"
-              className="bg-surface hover:bg-surface/80 text-foreground font-bold px-8 py-6 text-lg rounded-lg border-2 border-primary/30 transition-all"
+              className="w-full rounded-lg border-2 border-primary/30 bg-surface px-5 py-5 text-base font-bold text-foreground transition-all hover:bg-surface/80 sm:w-auto sm:px-8 sm:py-6 sm:text-lg"
               onClick={() => window.open('https://www.linkedin.com/in/bhanu-vardhan-medapalli/', '_blank')}
             >
               Let's Connect
@@ -64,25 +64,25 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="mt-12 grid grid-cols-2 gap-6">
-            <div className="bg-surface border border-border rounded-lg p-5 hover:border-primary/50 transition-all hover:shadow-lg">
-              <p className="text-3xl font-bold text-primary">10+</p>
-              <p className="text-sm font-semibold text-muted-foreground mt-1">Projects Completed</p>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-6">
+            <div className="rounded-lg border border-border bg-surface p-4 transition-all hover:border-primary/50 hover:shadow-lg sm:p-5">
+              <p className="text-2xl font-bold text-primary sm:text-3xl">10+</p>
+              <p className="mt-1 text-xs font-semibold text-muted-foreground sm:text-sm">Projects Completed</p>
             </div>
-            <div className="bg-surface border border-border rounded-lg p-5 hover:border-primary/50 transition-all hover:shadow-lg">
-              <p className="text-3xl font-bold text-primary">25+</p>
-              <p className="text-sm font-semibold text-muted-foreground mt-1">Skills Mastered</p>
+            <div className="rounded-lg border border-border bg-surface p-4 transition-all hover:border-primary/50 hover:shadow-lg sm:p-5">
+              <p className="text-2xl font-bold text-primary sm:text-3xl">25+</p>
+              <p className="mt-1 text-xs font-semibold text-muted-foreground sm:text-sm">Skills Mastered</p>
             </div>
           </div>
         </div>
 
         {/* Right side - Profile image */}
-        <div className="flex justify-center md:justify-end">
-          <div className="relative group">
+        <div className="flex min-w-0 justify-center md:justify-end">
+          <div className="group relative">
             <div className="absolute -inset-1 bg-primary/30 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition duration-1000"></div>
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-xl"></div>
-              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border-2 border-primary/40 shadow-lg">
+              <div className="relative h-64 w-64 max-w-full overflow-hidden rounded-2xl border-2 border-primary/40 shadow-lg sm:h-80 sm:w-80 lg:h-96 lg:w-96">
                 <img
                   src={bhanuImage}
                   alt="Bhanu Vardhan Medapalli"

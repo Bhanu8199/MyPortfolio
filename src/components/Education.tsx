@@ -22,15 +22,15 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-background">
+    <section id="education" className="bg-background py-12 sm:py-16 lg:py-20">
       <div className="container px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+        <div className="mb-10 text-center sm:mb-12 lg:mb-16">
+          <h2 className="mb-3 text-3xl font-display font-bold text-foreground sm:mb-4 sm:text-4xl md:text-5xl">
             <span className="text-primary">
               Education
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-muted-foreground sm:text-lg">
             My academic journey and qualifications
           </p>
         </div>
@@ -39,15 +39,15 @@ const Education = () => {
           {education.map((edu, index) => (
             <div
               key={index}
-              className="bg-surface border border-border rounded-lg p-8 hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+              className="rounded-lg border border-border bg-surface p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-lg sm:p-8"
             >
-              <div className="flex items-start gap-6">
-                <div className="p-4 bg-primary/20 rounded-lg flex-shrink-0">
-                  <GraduationCap className="w-8 h-8 text-primary" />
+              <div className="flex min-w-0 items-start gap-4 sm:gap-6">
+                <div className="flex-shrink-0 rounded-lg bg-primary/20 p-3 sm:p-4">
+                  <GraduationCap className="h-6 w-6 text-primary sm:h-8 sm:w-8" />
                 </div>
-                <div className="flex-1">
+                <div className="min-w-0 flex-1">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-3">
-                    <h3 className="text-2xl font-display font-bold text-foreground">
+                    <h3 className="text-xl font-display font-bold text-foreground sm:text-2xl">
                       {edu.degree}
                     </h3>
                     <Badge
@@ -56,7 +56,7 @@ const Education = () => {
                       {edu.period}
                     </Badge>
                   </div>
-                  <p className="text-lg text-muted-foreground leading-relaxed">{edu.institution}</p>
+                  <p className="break-words text-base leading-relaxed text-muted-foreground sm:text-lg">{edu.institution}</p>
                 </div>
               </div>
             </div>

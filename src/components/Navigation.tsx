@@ -37,24 +37,24 @@ const Navigation = () => {
       isScrolled || isOpen ? 'bg-background/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex h-16 items-center justify-between gap-3">
           {/* Logo */}
           <a
             href="#home"
             onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}
-            className="text-2xl font-display font-bold text-foreground hover:text-primary transition-colors"
+            className="shrink-0 text-lg font-display font-bold text-foreground transition-colors hover:text-primary sm:text-2xl"
           >
             BVM's Portfolio
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden items-center gap-1 xl:flex">
             {navItems.map((item, index) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-all"
+                className="rounded-lg px-2 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-primary/10 hover:text-foreground 2xl:px-3"
               >
                 {item.label}
               </a>
@@ -65,7 +65,9 @@ const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="h-11 w-11 shrink-0 xl:hidden"
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -74,13 +76,13 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border bg-background/95 backdrop-blur-md">
+          <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-border bg-background/95 py-2 backdrop-blur-md xl:hidden">
             {navItems.map((item, index) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
-                className="block px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-primary/10 rounded-lg transition-all"
+                className="block rounded-lg px-4 py-2.5 text-sm font-medium text-muted-foreground transition-all hover:bg-primary/10 hover:text-foreground"
               >
                 {item.label}
               </a>

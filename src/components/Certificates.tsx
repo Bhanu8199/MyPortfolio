@@ -41,24 +41,24 @@ const Certificates = () => {
   ];
 
   return (
-    <section id="certificates" className="py-20 bg-background">
+    <section id="certificates" className="bg-background py-12 sm:py-16 lg:py-20">
       <div className="container px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+        <div className="mb-10 text-center sm:mb-12 lg:mb-16">
+          <h2 className="mb-3 text-3xl font-display font-bold text-foreground sm:mb-4 sm:text-4xl md:text-5xl">
             <span className="text-primary">
               Certificates & Achievements
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-muted-foreground sm:text-lg">
             Recognition of my professional growth and certifications
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-12">
+        <div className="mx-auto mb-8 grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:mb-12 lg:grid-cols-3">
           {certificates.map((cert, index) => (
             <div
               key={index}
-              className="bg-surface border border-border rounded-lg overflow-hidden hover:border-primary/40 hover:shadow-lg transition-all duration-300 group"
+              className="group min-w-0 overflow-hidden rounded-lg border border-border bg-surface transition-all duration-300 hover:border-primary/40 hover:shadow-lg"
             >
               <div className="aspect-[4/3] overflow-hidden bg-muted relative">
                 <img
@@ -66,11 +66,11 @@ const Certificates = () => {
                   alt={cert.title}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="flex items-start gap-3 mb-3">
                   <div className="p-2 bg-primary/20 rounded-lg flex-shrink-0">
                     <Award className="w-5 h-5 text-primary" />
@@ -88,7 +88,7 @@ const Certificates = () => {
         <div className="text-center">
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-6 text-lg rounded-lg transition-all"
+            className="max-w-full rounded-lg bg-primary px-6 py-5 text-base font-semibold text-white transition-all hover:bg-primary/90 sm:px-8 sm:py-6 sm:text-lg"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Let's Connect

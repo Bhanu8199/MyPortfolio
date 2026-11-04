@@ -73,15 +73,15 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-background">
+    <section id="projects" className="bg-background py-12 sm:py-16 lg:py-20">
       <div className="container px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+        <div className="mb-10 text-center sm:mb-12 lg:mb-16">
+          <h2 className="mb-3 text-3xl font-display font-bold text-foreground sm:mb-4 sm:text-4xl md:text-5xl">
             <span className="text-primary">
               Projects
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-muted-foreground sm:text-lg">
             A showcase of my recent work and technical expertise
           </p>
         </div>
@@ -90,18 +90,18 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-surface border border-border rounded-lg p-6 hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+              className="min-w-0 rounded-lg border border-border bg-surface p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-lg sm:p-6"
             >
               <div className="h-1 bg-primary rounded-full mb-4" />
               <div className="flex items-start gap-3 mb-4">
                 <div className="p-3 bg-primary/20 rounded-lg flex-shrink-0">
                   <Code2 className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-display font-bold text-foreground">
+                <h3 className="min-w-0 break-words text-lg font-display font-bold text-foreground sm:text-xl">
                   {project.title}
                 </h3>
               </div>
-              <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
+              <p className="mb-4 break-words text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2 mb-6">

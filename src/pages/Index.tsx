@@ -26,7 +26,7 @@ const Index = () => {
       <Contact />
       
       {/* Footer */}
-      <footer className="bg-foreground text-background py-8">
+      <footer className="bg-foreground py-6 text-background sm:py-8">
         <div className="container px-4 text-center">
           <p className="text-sm">
             © <a href="#home" className="hover:text-secondary transition-colors">BHANUVARDHAN MEDAPALLI</a>, All Right Reserved.

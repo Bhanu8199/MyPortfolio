@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Mail, Linkedin, Github } from "lucide-react";
+import { MapPin, Mail, Linkedin, Github, type LucideIcon } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import type { ContactFormData } from "@/lib/contact";
@@ -94,7 +94,7 @@ const Contact = () => {
     }
   };
 
-  const contactInfo = [
+  const contactInfo: { icon: LucideIcon; label: string; value: string; href?: string }[] = [
     {
       icon: MapPin,
       label: "My Address",
@@ -111,50 +111,50 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-20 bg-background"
+      className="bg-background py-12 sm:py-16 lg:py-20"
     >
       <div className="container px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+        <div className="mb-10 text-center sm:mb-12 lg:mb-16">
+          <h2 className="mb-3 text-3xl font-display font-bold text-foreground sm:mb-4 sm:text-4xl md:text-5xl">
             <span className="text-primary">
               Get In Touch
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-muted-foreground sm:text-lg">
             I'd love to hear from you. Send me a message or connect on social media.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:items-stretch">
+        <div className="mx-auto grid min-w-0 max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 md:items-stretch md:gap-8">
           {/* Contact Info */}
-          <div className="space-y-6 md:h-full">
+          <div className="min-w-0 space-y-4 sm:space-y-6 md:h-full">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="bg-surface border border-border rounded-lg p-6 hover:border-primary/40 hover:shadow-md transition-all"
+                className="min-w-0 rounded-lg border border-border bg-surface p-4 transition-all hover:border-primary/40 hover:shadow-md sm:p-6"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex min-w-0 items-start gap-3 sm:gap-4">
                   <div className="p-3 bg-primary/20 rounded-lg flex-shrink-0">
                     <info.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="flex-1">
+                  <div className="min-w-0 flex-1">
                     <p className="text-sm text-muted-foreground font-semibold mb-1">{info.label}</p>
-                    {"href" in info ? (
+                    {info.href ? (
                       <a
-                        href={(info as any).href}
-                        className="text-base font-semibold text-foreground hover:text-primary transition-colors"
+                        href={info.href}
+                        className="break-all text-base font-semibold text-foreground transition-colors hover:text-primary sm:break-normal"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-base font-semibold text-foreground">{info.value}</p>
+                      <p className="break-words text-base font-semibold text-foreground">{info.value}</p>
                     )}
                   </div>
                 </div>
               </div>
             ))}
 
-            <div className="bg-surface border border-primary/30 rounded-lg p-6 hover:shadow-lg transition-all">
+            <div className="min-w-0 rounded-lg border border-primary/30 bg-surface p-4 transition-all hover:shadow-lg sm:p-6">
               <p className="font-bold text-foreground mb-4 text-lg">Follow My Journey</p>
               <div className="flex flex-col gap-3">
                 <Button
@@ -197,7 +197,7 @@ const Contact = () => {
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="bg-surface border border-border rounded-lg p-8 hover:shadow-lg transition-all"
+            className="min-w-0 rounded-lg border border-border bg-surface p-5 transition-all hover:shadow-lg sm:p-8"
           >
             <div className="space-y-5">
               <div>
@@ -207,7 +207,7 @@ const Contact = () => {
                   placeholder="Enter your full name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-primary/5 border-2 border-border rounded-lg px-5 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-0 transition-colors"
+                  className="w-full min-w-0 rounded-lg border-2 border-border bg-primary/5 px-3 py-3 text-foreground transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-0 sm:px-5"
                   required
                 />
               </div>
@@ -219,7 +219,7 @@ const Contact = () => {
                   placeholder="your.email@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-primary/5 border-2 border-border rounded-lg px-5 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-0 transition-colors"
+                  className="w-full min-w-0 rounded-lg border-2 border-border bg-primary/5 px-3 py-3 text-foreground transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-0 sm:px-5"
                   required
                 />
               </div>
@@ -231,7 +231,7 @@ const Contact = () => {
                   placeholder="Enter your 10-digit phone number"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-primary/5 border-2 border-border rounded-lg px-5 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-0 transition-colors"
+                  className="w-full min-w-0 rounded-lg border-2 border-border bg-primary/5 px-3 py-3 text-foreground transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-0 sm:px-5"
                   required
                 />
               </div>
@@ -242,7 +242,7 @@ const Contact = () => {
                   placeholder="Your message here..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-primary/5 border-2 border-border rounded-lg px-5 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-0 transition-colors"
+                  className="w-full min-w-0 rounded-lg border-2 border-border bg-primary/5 px-3 py-3 text-foreground transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-0 sm:px-5"
                   required
                 />
               </div>

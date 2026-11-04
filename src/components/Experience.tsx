@@ -35,15 +35,15 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-background">
+    <section id="experience" className="bg-background py-12 sm:py-16 lg:py-20">
       <div className="container px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+        <div className="mb-10 text-center sm:mb-12 lg:mb-16">
+          <h2 className="mb-3 text-3xl font-display font-bold text-foreground sm:mb-4 sm:text-4xl md:text-5xl">
             <span className="text-primary">
               Experience
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-base text-muted-foreground sm:text-lg">
             Professional journey and internship experiences
           </p>
         </div>
@@ -52,23 +52,23 @@ const Experience = () => {
           {experience.map((exp, index) => (
             <div
               key={index}
-              className="bg-surface border border-border rounded-lg p-6 md:p-8 hover:border-primary/40 hover:shadow-lg transition-all duration-300"
+              className="rounded-lg border border-border bg-surface p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-lg sm:p-6 md:p-8"
             >
-              <div className="flex items-start gap-4 md:gap-6">
-                <div className="p-3 md:p-4 bg-primary/20 rounded-lg flex-shrink-0">
-                  <Briefcase className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+              <div className="flex min-w-0 items-start gap-3 sm:gap-4 md:gap-6">
+                <div className="flex-shrink-0 rounded-lg bg-primary/20 p-2.5 sm:p-3 md:p-4">
+                  <Briefcase className="h-5 w-5 text-primary sm:h-6 sm:w-6 md:h-7 md:w-7" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-4 mb-3">
-                    <h3 className="text-xl md:text-2xl font-display font-bold text-foreground">
+                    <h3 className="break-words text-lg font-display font-bold text-foreground sm:text-xl md:text-2xl">
                       {exp.role}
                     </h3>
                     <Badge className="bg-primary/20 text-primary border-0 whitespace-nowrap font-semibold">
                       {exp.period}
                     </Badge>
                   </div>
-                  <p className="text-sm md:text-base font-semibold text-muted-foreground mb-2">{exp.company}</p>
-                  <p className="text-sm text-foreground/80 mb-4 leading-relaxed">{exp.description}</p>
+                  <p className="mb-2 break-words text-sm font-semibold text-muted-foreground md:text-base">{exp.company}</p>
+                  <p className="mb-4 text-sm leading-relaxed text-foreground/80 sm:text-base">{exp.description}</p>
                   {exp.link_url && (
                     <Button
                       asChild
