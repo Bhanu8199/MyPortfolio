@@ -126,7 +126,7 @@ const Certificates = () => {
                   <div className="p-2 bg-primary/20 rounded-lg flex-shrink-0">
                     <Award className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="font-bold text-foreground text-sm md:text-base leading-tight">
+                  <h3 className="min-w-0 break-words font-bold text-foreground text-sm md:text-base leading-tight">
                     {cert.title}
                   </h3>
                 </div>

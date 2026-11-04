@@ -49,7 +49,7 @@ const About = () => {
                       <div className="p-3 bg-primary/20 rounded-lg flex-shrink-0">
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
-                      <p className="text-base font-semibold text-foreground">{highlight.text}</p>
+                      <p className="min-w-0 break-words text-base font-semibold text-foreground">{highlight.text}</p>
                     </div>
                   </div>
                 );

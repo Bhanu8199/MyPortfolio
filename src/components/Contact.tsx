@@ -142,7 +142,7 @@ const Contact = () => {
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="break-all text-base font-semibold text-foreground transition-colors hover:text-primary sm:break-normal"
+                        className="break-words text-base font-semibold text-foreground transition-colors hover:text-primary"
                       >
                         {info.value}
                       </a>
