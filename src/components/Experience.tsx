@@ -10,7 +10,6 @@ const Experience = () => {
       company: "Shell India & Edunet Foundation ( Onsite On My College Campus )",
       description: "Completed the Advanced Internship in Green Skills and Artificial Intelligence under the Skills4Future Program, gaining practical knowledge in AI fundamentals, sustainable technologies, and professional development.",
       link_url: "https://www.linkedin.com/posts/bhanu-vardhan-medapalli_green-skills-ai-internship-completion-certificate-activity-7406598206798827522-5caH/",
-      link_text: "Visit LinkedIn To See My Certification"
     },
     {
       role: "SAP Intern",
@@ -18,7 +17,6 @@ const Experience = () => {
       company: "SAP & Edunet Foundation ( Remote )",
       description: "Completed the SAP Educate to Employ Program, gaining 369+ hours of hands-on experience in SAP ABAP, BTP, software development, Agile practices, and professional skills to prepare for enterprise environments.",
       link_url: "https://www.linkedin.com/posts/bhanu-vardhan-medapalli_sap-internship-completion-certificate-activity-7367817240009682944-hnKR/",
-      link_text: "Visit LinkedIn To See My Certification"
     },
     {
       role: "Front-End Developer Intern",
@@ -26,7 +24,6 @@ const Experience = () => {
       company: "Varcode Edtech Pvt.Ltd ( Remote )",
       description: "Developed and maintained responsive user interfaces using React and Tailwind CSS for various client projects.",
       link_url: "https://html-tutorials.varcode.in/",
-      link_text: "Visit Website"
     },
     {
       role: "Python Developer Intern",
@@ -34,7 +31,6 @@ const Experience = () => {
       company: "Main Flow Services And Technologies Pvt.Ltd ( Remote )",
       description: "I am proficient in Python, having mastered both foundational and advanced concepts through project development and practical applications.",
       link_url: "https://github.com/Bhanu8199/MAIN-FLOW-SERVICES-INTERNSHIP-/",
-      link_text: "Visit GitHub Repo"
     },
   ];
 
@@ -83,7 +79,7 @@ const Experience = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {exp.link_text}
+                        View Details
                         <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
