@@ -5,24 +5,23 @@
 /* Professional Dark Color System Design Tokens */
 @layer base {
   :root {
-    /* Deep Navy - Dominant Background Color (60%) */
-    --background: 221 71% 7%; /* #0B1120 */
+    /* Midnight navy background */
+    --background: 221 49% 8.4%; /* #0B1220 */
     --foreground: 210 40% 98%; /* #F8FAFC */
 
-    /* Surface - Card/Container Color */
-    --card: 217 33% 9%; /* #111827 */
+    /* Slate surfaces */
+    --card: 221 38% 14.5%; /* #172033 */
     --card-foreground: 210 40% 98%; /* #F8FAFC */
 
     /* Popover - Dropdown/Modal */
-    --popover: 217 33% 9%; /* #111827 */
+    --popover: 221 38% 14.5%; /* #172033 */
     --popover-foreground: 210 40% 98%; /* #F8FAFC */
 
     /* Electric Blue - Primary Accent (10%) */
     --primary: 217 91% 60%; /* #3B82F6 */
     --primary-foreground: 210 40% 98%; /* #F8FAFC */
 
-    /* Secondary - Subtle Accent (Avoid using - prefer primary for consistency) */
-    --secondary: 217 33% 9%; /* #111827 - Use surface instead */
+    --secondary: 221 38% 14.5%; /* #172033 */
     --secondary-foreground: 210 40% 98%; /* #F8FAFC */
 
     /* Muted Text - Supporting Information (30%) */
@@ -39,7 +38,7 @@
 
     /* Border - Subtle dark navy */
     --border: 215 28% 17%; /* #1E293B */
-    --input: 217 33% 9%; /* #111827 */
+    --input: 221 38% 14.5%; /* #172033 */
 
     /* Ring - Focus indicator (Blue) */
     --ring: 217 91% 60%; /* #3B82F6 - Electric Blue */
@@ -49,19 +48,19 @@
 
   .dark {
     /* Already using dark theme as default - these are the same */
-    --background: 221 71% 7%; /* #0B1120 */
+    --background: 221 49% 8.4%; /* #0B1220 */
     --foreground: 210 40% 98%; /* #F8FAFC */
 
-    --card: 217 33% 9%; /* #111827 */
+    --card: 221 38% 14.5%; /* #172033 */
     --card-foreground: 210 40% 98%; /* #F8FAFC */
 
-    --popover: 217 33% 9%; /* #111827 */
+    --popover: 221 38% 14.5%; /* #172033 */
     --popover-foreground: 210 40% 98%; /* #F8FAFC */
 
     --primary: 217 91% 60%; /* #3B82F6 - Electric Blue */
     --primary-foreground: 210 40% 98%; /* #F8FAFC */
 
-    --secondary: 217 33% 9%; /* #111827 */
+    --secondary: 221 38% 14.5%; /* #172033 */
     --secondary-foreground: 210 40% 98%; /* #F8FAFC */
 
     --muted: 217 33% 17%; /* #1E293B */
@@ -74,7 +73,7 @@
     --destructive-foreground: 0 0% 100%;
 
     --border: 215 28% 17%; /* #1E293B */
-    --input: 217 33% 9%; /* #111827 */
+    --input: 221 38% 14.5%; /* #172033 */
     --ring: 217 91% 60%; /* #3B82F6 - Electric Blue */
   }
 }

@@ -1,76 +1,41 @@
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
-import { Code2, Database, Palette, Users, Brain, Zap } from "lucide-react";
+import { Code2, Database, Palette, Users, Brain, Sparkles, Zap } from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
     {
       name: "Frontend Development",
       icon: Code2,
-      skills: [
-        { name: "HTML/CSS", level: 90 },
-        { name: "JavaScript", level: 80 },
-        { name: "React.js", level: 80 },
-        { name: "TypeScript", level: 65 },
-        { name: "Tailwind CSS", level: 80 },
-        { name: "Bootstrap", level: 85 },
-      ],
+      skills: ["HTML/CSS", "JavaScript", "React.js", "TypeScript", "Tailwind CSS", "Bootstrap"],
     },
     {
       name: "Backend & Database",
       icon: Database,
-      skills: [
-        { name: "Python", level: 80 },
-        { name: "MySQL", level: 85 },
-        { name: "MongoDB", level: 85 },
-        { name: "PostgreSQL", level: 85 },
-        { name: "Node.js", level: 70 },
-        { name: "REST APIs", level: 80 },
-        { name: "Express.js", level: 65 },
-      ],
+      skills: ["Python", "MySQL", "MongoDB", "PostgreSQL", "Node.js", "REST APIs", "Express.js"],
     },
     {
       name: "AI & Machine Learning",
       icon: Brain,
-      skills: [
-        { name: "Machine Learning", level: 70 },
-        { name: "Generative AI", level: 50 },
-        { name: "CNN (Convolutional Neural Networks)", level: 75 },
-        { name: "Classification", level: 75 },
-        { name: "Regression", level: 75 },
-        { name: "Artificial Intelligence", level: 60 },
-        { name: "Data Science", level: 60 },
-      ],
+      skills: ["Machine Learning", "Generative AI", "CNN (Convolutional Neural Networks)", "Classification", "Regression", "Artificial Intelligence", "Data Science"],
+    },
+    {
+      name: "AI Tools & Assistants",
+      icon: Sparkles,
+      skills: ["GitHub Copilot", "Claude", "OpenAI", "ChatGPT", "Gemini", "Perplexity", "Meta AI"],
     },
     {
       name: "Tools & Design",
       icon: Palette,
-      skills: [
-        { name: "Canva", level: 75 },
-        { name: "Git/GitHub", level: 90 },
-        { name: "VS Code", level: 95 },
-      ],
+      skills: ["Canva", "Git/GitHub", "VS Code"],
     },
     {
       name: "Productivity & Office",
       icon: Users,
-      skills: [
-        { name: "MS Office", level: 95 },
-        { name: "Excel", level: 92 },
-        { name: "PowerPoint", level: 90 },
-        { name: "PowerBI", level: 80 },
-        { name: "Communication", level: 88 },
-      ],
+      skills: ["MS Office", "Excel", "PowerPoint", "Power BI", "Communication"],
     },
     {
       name: "Advanced Technologies",
       icon: Zap,
-      skills: [
-        { name: "Data Analysis", level: 85 },
-        { name: "Problem Solving", level: 90 },
-        { name: "API Integration", level: 85 },
-        { name: "Cloud Services", level: 30 },
-      ],
+      skills: ["Data Analysis", "Problem Solving", "API Integration", "Cloud Services"],
     },
   ];
 
@@ -84,7 +49,7 @@ const Skills = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive overview of my technical skills across frontend, backend, AI/ML, and specialized technologies
+            The technologies and strengths I use to build thoughtful, reliable digital experiences.
           </p>
         </div>
 
@@ -106,24 +71,14 @@ const Skills = () => {
                     </h3>
                   </div>
 
-                  <div className="space-y-4">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex} className="space-y-2">
-                        <div className="flex justify-between items-center">
-                          <span className="font-semibold text-foreground text-sm truncate">
-                            {skill.name}
-                          </span>
-                          <Badge className="ml-2 font-bold text-xs bg-primary/20 text-primary border-0">
-                            {skill.level}%
-                          </Badge>
-                        </div>
-                        <div className="relative h-2 bg-muted rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-primary transition-all duration-1000 ease-out rounded-full"
-                            style={{ width: `${skill.level}%` }}
-                          />
-                        </div>
-                      </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border border-border bg-background px-3 py-1.5 text-sm font-medium text-foreground"
+                      >
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -132,24 +87,20 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* Statistics Section */}
         <div className="mt-20 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="bg-surface border border-border rounded-lg p-6 text-center hover:shadow-lg transition-all">
-              <p className="text-3xl md:text-4xl font-bold text-primary mb-2">25+</p>
-              <p className="text-muted-foreground font-semibold">Skills Covered</p>
-            </div>
-            <div className="bg-surface border border-border rounded-lg p-6 text-center hover:shadow-lg transition-all">
-              <p className="text-3xl md:text-4xl font-bold text-primary mb-2">6</p>
-              <p className="text-muted-foreground font-semibold">Categories</p>
-            </div>
-            <div className="bg-surface border border-border rounded-lg p-6 text-center hover:shadow-lg transition-all">
-              <p className="text-3xl md:text-4xl font-bold text-primary mb-2">85%</p>
-              <p className="text-muted-foreground font-semibold">Avg Proficiency</p>
-            </div>
-            <div className="bg-surface border border-border rounded-lg p-6 text-center hover:shadow-lg transition-all">
-              <p className="text-3xl md:text-4xl font-bold text-primary mb-2">∞</p>
-              <p className="text-muted-foreground font-semibold">Learning</p>
+          <div className="rounded-lg border border-border bg-surface p-6 md:p-8">
+            <h3 className="mb-5 text-center text-xl font-bold text-foreground">
+              How I Work
+            </h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {["Problem-solving", "Collaboration", "Continuous learning", "Adaptability"].map((strength) => (
+                <span
+                  key={strength}
+                  className="rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary"
+                >
+                  {strength}
+                </span>
+              ))}
             </div>
           </div>
         </div>
