@@ -26,10 +26,14 @@ const Index = () => {
       <Contact />
       
       {/* Footer */}
-      <footer className="bg-foreground py-6 text-background sm:py-8">
+      <footer className="border-t border-border bg-surface/70 py-6 sm:py-8">
         <div className="container px-4 text-center">
-          <p className="text-sm">
-            © <a href="#home" className="hover:text-secondary transition-colors">BHANUVARDHAN MEDAPALLI</a>, All Right Reserved.
+          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+            © {new Date().getFullYear()}{" "}
+            <a href="#home" className="font-semibold text-foreground transition-colors hover:text-primary">
+              BHANUVARDHAN MEDAPALLI
+            </a>
+            . All rights reserved.
           </p>
         </div>
       </footer>
