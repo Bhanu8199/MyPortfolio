@@ -158,7 +158,7 @@ const Contact = () => {
               <p className="font-bold text-foreground mb-4 text-lg">Follow My Journey</p>
               <div className="flex flex-col gap-3">
                 <Button
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 rounded-lg transition-all"
+                  className="w-full bg-surface hover:bg-surface/80 text-foreground font-bold py-3 rounded-lg border-2 border-border transition-all"
                   onClick={() => window.open("https://www.linkedin.com/in/bhanu-vardhan-medapalli/", "_blank")}
                 >
                   <Linkedin className="w-6 h-6 mr-2" />
