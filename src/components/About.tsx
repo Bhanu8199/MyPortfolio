@@ -34,7 +34,7 @@ const About = () => {
             </div>
 
             <p className="mb-6 text-base leading-relaxed text-muted-foreground sm:text-xl">
-              PU 2026 🎓 | Ex - Intern @SAP | Frontend Developer | Python & Data Science Enthusiast | Skilled in Generative AI & ML, Python, HTML, CSS, JavaScript, React.js, SQL, MongoDB | Currently exploring advanced AI technologies.
+              Computer Science Engineering - AI graduate from Parul University and former SAP intern, passionate about building impactful software solutions. I specialize in full-stack development, Python, and AI, turning ideas into responsive, intelligent, and user-friendly applications.
             </p>
 
             <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 sm:gap-6">
