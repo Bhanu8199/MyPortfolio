@@ -45,7 +45,7 @@ const About = () => {
                     key={index}
                     className="rounded-lg border border-primary/20 bg-primary/10 p-4 transition-all hover:border-primary/50 hover:shadow-md sm:p-6"
                   >
-                    <div className="flex items-start gap-3">
+                    <div className="flex items-center gap-3">
                       <div className="p-3 bg-primary/20 rounded-lg flex-shrink-0">
                         <Icon className="w-6 h-6 text-primary" />
                       </div>
