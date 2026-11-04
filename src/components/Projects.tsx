@@ -5,6 +5,30 @@ import { Code2 } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
+      title: "My Portfolio",
+      description: "A responsive personal portfolio showcasing projects, skills, and experience, with a contact form for professional enquiries.",
+      tags: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui"],
+      link_url: "https://bvm-portfolio.vercel.app/",
+    },
+    {
+      title: "Sri Hari Wood Works",
+      description: "A responsive business website featuring services, project galleries, customer reviews, and direct phone and WhatsApp enquiry options.",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Neon PostgreSQL"],
+      link_url: "https://sri-hari-wood-works-site.vercel.app/",
+    },
+    {
+      title: "Team Task Manager",
+      description: "A full-stack project management app with JWT authentication, role-based access, project membership, and collaborative task tracking.",
+      tags: ["React", "Vite", "Node.js", "Express", "PostgreSQL", "JWT"],
+      link_url: "https://team-task-manager-azure.vercel.app/",
+    },
+    {
+      title: "Feedback Portal",
+      description: "A responsive feedback management portal with customer accounts, feedback status tracking, and an admin dashboard with search, analytics, and CSV export.",
+      tags: ["Laravel 12", "PHP", "SQLite", "MySQL", "Blade", "Bootstrap 5"],
+      link_url: "https://github.com/Bhanu8199/Feedback-Portal",
+    },
+    {
       "title": "Golden Restaurant",
       "description": "This restaurant website utilizes modern web technologies to offer a seamless experience, featuring clear menu displays, robust online ordering capabilities, and a fully responsive design.",
       "tags": ["Html", "Css", "Javascript"],
@@ -29,9 +53,21 @@ const Projects = () => {
       link_url: "https://github.com/Bhanu8199/StoreRate",
     },
     {
+      title: "Research Paper Analyzer",
+      description: "A full-stack platform for uploading and analyzing research papers, extracting metadata, and viewing summaries, key topics, and research insights.",
+      tags: ["React", "TypeScript", "Vite", "Express", "PostgreSQL", "Drizzle ORM", "TanStack Query"],
+      link_url: "https://github.com/Bhanu8199/Research-Paper-Analyzer",
+    },
+    {
+      title: "Prompt Refinement App",
+      description: "A full-stack AI-powered application that refines prompts from text and multimodal inputs, including images, documents, and videos, with persistent refinement history.",
+      tags: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Drizzle ORM", "Hugging Face"],
+      link_url: "https://github.com/Bhanu8199/Prompt-Refinement-App",
+    },
+    {
       title: "Car Price Prediction",
       description: "Machine learning project for predicting car prices using various features and algorithms with comprehensive data analysis.",
-      tags: ["Python", "Numpy", "Pandas", "Matplotlib", "Seaborn", "ML Models"],
+      tags: ["Python", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Machine Learning"],
       link_url: "https://github.com/Bhanu8199/CAR-PRICE-PREDICTION-PROJECT",
     },
   ];
