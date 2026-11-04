@@ -31,7 +31,7 @@ const Index = () => {
           <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
             © {new Date().getFullYear()}{" "}
             <a href="#home" className="font-semibold text-foreground transition-colors hover:text-primary">
-              BHANUVARDHAN MEDAPALLI
+              BHANU VARDHAN MEDAPALLI
             </a>
             . All rights reserved.
           </p>
